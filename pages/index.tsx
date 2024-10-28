@@ -194,11 +194,11 @@ export default function Home() {
                   height={100}
                 />
                 <button
-                  className="flex absolute left-[170px] button-game scissors w-[30%] aspect-square rounded-full justify-center items-center shadow-[inset_0px_-6px_0px_rgba(0,0,0,0.2)]"
+                  className="flex absolute left-[35%] button-game scissors w-[30%] aspect-square rounded-full justify-center items-center shadow-[inset_0px_-6px_0px_rgba(0,0,0,0.2)]"
                   onClick={() => handleGame(scissors)}
                 >
                   <div className="flex w-[80%] aspect-square rounded-full justify-center items-center bg-white shadow-[inset_0px_6px_0px_rgba(0,0,0,0.2)]">
-                    <div className="w-[60px]">
+                    <div className="w-[40px] md:w-[60px]">
                       <Image
                         src={"/images/icon-scissors.svg"}
                         alt=""
@@ -209,11 +209,11 @@ export default function Home() {
                   </div>
                 </button>
                 <button
-                  className="flex absolute left-0 top-[120px] button-game spock w-[30%] aspect-square rounded-full justify-center items-center shadow-[inset_0px_-6px_0px_rgba(0,0,0,0.2)]"
+                  className="flex absolute left-0 top-[26%] button-game spock w-[30%] aspect-square rounded-full justify-center items-center shadow-[inset_0px_-6px_0px_rgba(0,0,0,0.2)]"
                   onClick={() => handleGame(spock)}
                 >
                   <div className="flex w-[80%] aspect-square rounded-full justify-center items-center bg-white shadow-[inset_0px_6px_0px_rgba(0,0,0,0.2)]">
-                    <div className="w-[60px]">
+                    <div className="w-[40px] md:w-[60px]">
                       <Image
                         src={"/images/icon-spock.svg"}
                         alt=""
@@ -224,11 +224,11 @@ export default function Home() {
                   </div>
                 </button>
                 <button
-                  className="flex absolute right-0 top-[170px] button-game paper w-[30%] aspect-square rounded-full justify-center items-center shadow-[inset_0px_-6px_0px_rgba(0,0,0,0.2)]"
+                  className="flex absolute right-0 top-[38%] button-game paper w-[30%] aspect-square rounded-full justify-center items-center shadow-[inset_0px_-6px_0px_rgba(0,0,0,0.2)]"
                   onClick={() => handleGame(paper)}
                 >
                   <div className="flex w-[80%] aspect-square rounded-full justify-center items-center bg-white shadow-[inset_0px_6px_0px_rgba(0,0,0,0.2)]">
-                    <div className="w-[60px]">
+                    <div className="w-[40px] md:w-[60px]">
                       <Image
                         src={"/images/icon-paper.svg"}
                         alt=""
@@ -239,11 +239,11 @@ export default function Home() {
                   </div>
                 </button>
                 <button
-                  className="flex absolute left-[50px] bottom-0 button-game lizard w-[30%] aspect-square rounded-full justify-center items-center shadow-[inset_0px_-6px_0px_rgba(0,0,0,0.2)]"
+                  className="flex absolute left-[14%] bottom-0 button-game lizard w-[30%] aspect-square rounded-full justify-center items-center shadow-[inset_0px_-6px_0px_rgba(0,0,0,0.2)]"
                   onClick={() => handleGame(lizard)}
                 >
                   <div className="flex w-[80%] aspect-square rounded-full justify-center items-center bg-white shadow-[inset_0px_6px_0px_rgba(0,0,0,0.2)]">
-                    <div className="w-[60px]">
+                    <div className="w-[40px] md:w-[60px]">
                       <Image
                         src={"/images/icon-lizard.svg"}
                         alt=""
@@ -254,11 +254,11 @@ export default function Home() {
                   </div>
                 </button>
                 <button
-                  className="flex absolute right-[50px] bottom-0 button-game rock w-[30%] aspect-square rounded-full justify-center items-center shadow-[inset_0px_-6px_0px_rgba(0,0,0,0.2)]"
+                  className="flex absolute right-[14%] bottom-0 button-game rock w-[30%] aspect-square rounded-full justify-center items-center shadow-[inset_0px_-6px_0px_rgba(0,0,0,0.2)]"
                   onClick={() => handleGame(rock)}
                 >
                   <div className="flex w-[80%] aspect-square rounded-full justify-center items-center bg-white shadow-[inset_0px_6px_0px_rgba(0,0,0,0.2)]">
-                    <div className="w-[60px]">
+                    <div className="w-[40px] md:w-[60px]">
                       <Image
                         src={"/images/icon-rock.svg"}
                         alt=""
@@ -275,31 +275,67 @@ export default function Home() {
                 <div
                   className={`${
                     step === 1 && "animate-[showElement_500ms_1_forwards_300ms]"
-                  } flex h-0 w-full max-w-[900px] items-center justify-center overflow-hidden gap-x-[40px]`}
+                  } flex flex-col h-0 w-full max-w-[900px] items-center justify-center overflow-hidden gap-y-[24px]`}
                 >
-                  {/* You picked */}
-                  <div className="flex w-[50%] max-w-[300px] flex-col gap-y-[16px] md:gap-y-[24px] items-center">
-                    <h3 className="text-[18px] md:text-[28px]">YOU PICKED</h3>
-                    <div
-                      className={`flex w-full ${
-                        userChoice?.getData().name
-                      }-choice aspect-square rounded-full justify-center items-center shadow-[inset_0px_-6px_0px_rgba(0,0,0,0.2)]`}
-                    >
-                      <div className="flex w-[80%] aspect-square rounded-full justify-center items-center bg-white shadow-[inset_0px_6px_0px_rgba(0,0,0,0.2)]">
-                        <div className="w-[60px]">
-                          <Image
-                            src={userChoice?.getData().icon || ""}
-                            alt={userChoice?.getData().name || ""}
-                            width={100}
-                            height={100}
-                          />
+                  <div className="flex w-full items-center justify-center overflow-hidden gap-x-[40px]">
+                    {/* You picked */}
+                    <div className="flex w-[50%] max-w-[300px] flex-col gap-y-[16px] md:gap-y-[24px] items-center">
+                      <h3 className="text-[14px] md:text-[28px]">YOU PICKED</h3>
+                      <div
+                        className={`flex w-full ${
+                          userChoice?.getData().name
+                        }-choice aspect-square rounded-full justify-center items-center shadow-[inset_0px_-6px_0px_rgba(0,0,0,0.2)]`}
+                      >
+                        <div className="flex w-[80%] aspect-square rounded-full justify-center items-center bg-white shadow-[inset_0px_6px_0px_rgba(0,0,0,0.2)]">
+                          <div className="w-[45px] md:w-[60px]">
+                            <Image
+                              src={userChoice?.getData().icon || ""}
+                              alt={userChoice?.getData().name || ""}
+                              width={100}
+                              height={100}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Result */}
+                    <div className="hidden lg:flex flex-col w-0 text-center overflow-hidden animate-[showResult_600ms_1_forwards_1s]">
+                      <h3 className="text-[48px] result text-nowrap">
+                        {result}
+                      </h3>
+                      <button
+                        className="text-nowrap px-8 py-4 bg-white text-red-500 rounded-lg"
+                        onClick={() => setStep(0)}
+                      >
+                        PLAY AGAIN
+                      </button>
+                    </div>
+
+                    {/* The house picked */}
+                    <div className="flex w-[50%] max-w-[300px] flex-col gap-y-[24px] items-center">
+                      <h3 className="text-[14px] md:text-[28px]">
+                        THE HOUSE PICKED
+                      </h3>
+                      <div
+                        className={`flex w-full ${
+                          computerChoice?.getData().name
+                        }-choice aspect-square rounded-full justify-center items-center shadow-[inset_0px_-6px_0px_rgba(0,0,0,0.2)]`}
+                      >
+                        <div className="flex w-[80%] aspect-square rounded-full justify-center items-center bg-white shadow-[inset_0px_6px_0px_rgba(0,0,0,0.2)]">
+                          <div className="w-[45px] md:w-[60px]">
+                            <Image
+                              src={computerChoice?.getData().icon || ""}
+                              alt={computerChoice?.getData().name || ""}
+                              width={100}
+                              height={100}
+                            />
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-
-                  {/* Result */}
-                  <div className="flex flex-col w-0 text-center overflow-hidden animate-[showResult_600ms_1_forwards_1s]">
+                  <div className="flex lg:hidden flex-col w-0 text-center overflow-hidden animate-[showResult_600ms_1_forwards_1s]">
                     <h3 className="text-[48px] result text-nowrap">{result}</h3>
                     <button
                       className="text-nowrap px-8 py-4 bg-white text-red-500 rounded-lg"
@@ -307,29 +343,6 @@ export default function Home() {
                     >
                       PLAY AGAIN
                     </button>
-                  </div>
-
-                  {/* The house picked */}
-                  <div className="flex w-[50%] max-w-[300px] flex-col gap-y-[24px] items-center">
-                    <h3 className="text-[18px] md:text-[28px]">
-                      THE HOUSE PICKED
-                    </h3>
-                    <div
-                      className={`flex w-full ${
-                        computerChoice?.getData().name
-                      }-choice aspect-square rounded-full justify-center items-center shadow-[inset_0px_-6px_0px_rgba(0,0,0,0.2)]`}
-                    >
-                      <div className="flex w-[80%] aspect-square rounded-full justify-center items-center bg-white shadow-[inset_0px_6px_0px_rgba(0,0,0,0.2)]">
-                        <div className="w-[60px]">
-                          <Image
-                            src={computerChoice?.getData().icon || ""}
-                            alt={computerChoice?.getData().name || ""}
-                            width={100}
-                            height={100}
-                          />
-                        </div>
-                      </div>
-                    </div>
                   </div>
                 </div>
               )}
