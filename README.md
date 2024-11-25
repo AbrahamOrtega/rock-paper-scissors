@@ -7,13 +7,13 @@ Una página web sencilla para jugar Piedra, Papel y Tijeras, desarrollada en [Ne
 Clona el proyecto
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/AbrahamOrtega/rock-paper-scissors
 ```
 
 Ve al directorio del proyecto
 
 ```bash
-  cd my-project
+  cd rock-paper-scissors
 ```
 
 Instala dependencias
